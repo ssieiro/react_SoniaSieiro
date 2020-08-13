@@ -28,10 +28,12 @@ export const setSearch = (search) => {
 export const fetchMovies = (search) => {
   return async (dispatch, getState) => {
     try {
+      console.log('prueba');
       dispatch(setLoading(true));
       dispatch(setSearch(search));
       const getMoviesRes = await api.getMovies(search);
-      const list = getMoviesRes.data.records;
+      console.log(getMoviesRes);
+      const list = getMoviesRes.data.Search ? getMoviesRes.data.Search : [];
       dispatch(updateList(list));
       console.log(list);
     } catch (e) {

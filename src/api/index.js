@@ -8,11 +8,11 @@ const instance = axios.create({
 });
 
 export const getMovies = (search) => {
-  const url = `?apikey=${API_KEY}&s=${search}`;
+  const url = `/?apikey=${API_KEY}&s=${search}`;
   return instance.get(url);
 };
 
 export const getMovieDetail = (movieID) => {
-  const url = `?apikey=${API_KEY}&i=${movieID}`;
+  const url = `/?apikey=${API_KEY}&i=${movieID}`;
   return instance.get(url);
 };
